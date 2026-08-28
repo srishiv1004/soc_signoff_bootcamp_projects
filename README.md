@@ -31,14 +31,14 @@ Checked items have working code, testbench, and simulation results pushed to thi
 <details>
 <summary><strong>Module 01: RTL Design and IP Integration</strong> — 21 labs</summary>
 
-- [x] Lab 1 — AND gate using Verilator ([lab_01/and_gate](./lab_01/and_gate))
+- [x] Lab 1 — AND gate using Verilator
 - [x] Lab 2 — 4x1 MUX using Verilator
 - [x] Lab 3 — Half Adder using Verilator
 - [x] Lab 4 — JK Flip-Flop using Verilator
 - [x] Lab 5 — Up Counter using Verilator
 - [x] Lab 6 — Down Counter using Verilator
-- [x] Lab 7 — Ripple Up Counter using Verilator ([lab_07/ripple_up_counter](./lab_07/ripple_up_counter))
-- [x] Lab 8 — UART Receiver, design + verification ([lab_08/uart_receiver](./lab_08/uart_receiver))
+- [x] Lab 7 — Ripple Up Counter using Verilator
+- [x] Lab 8 — UART Receiver, design + verification
 - [ ] Lab 9 — APB Bus Interface using Verilator
 - [ ] Lab 10 — APB–UART Bridge, design + verification
 - [ ] Lab 11 — Metastability without synchronization
