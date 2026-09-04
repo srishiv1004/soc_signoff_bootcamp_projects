@@ -1,0 +1,13 @@
+#!/bin/bash
+# Step 1: Compile RTL and Testbench using Verilator
+verilator --binary -j 0 -Wall --Wno-fatal \
+  uart.v apb_uart_bridge.v apb_uart_top.v apb_uart_tb.v \
+  --top apb_uart_tb --timing --trace --CFLAGS "-std=c++20"
+# Step 2: Enter build directory
+cd obj_dir || { echo "Error: obj_dir not found"; exit 1; }
+# Step 3: Build simulation executable
+make -f Vapb_uart_tb.mk Vapb_uart_tb || { echo "Error: Compilation failed"; exit 1; }
+# Step 4: Run simulation
+./Vapb_uart_tb || { echo "Error: Simulation failed"; exit 1; }
+# Step 5: Open waveform
+gtkwave apb_uart_dump.vcd
