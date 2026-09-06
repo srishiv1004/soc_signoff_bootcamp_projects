@@ -1,0 +1,27 @@
+# Yosys Script File
+read_verilog and_gate_non_synth.v
+# This command reads the Verilog input file
+
+hierarchy -check -top and_gate_non_synth
+# This command checks the hierarchy of the design and sets and_gate_non_synth as the top module
+
+proc; opt; fsm; opt; memory; opt
+# This command performs the internal processes done by yosys tool as well as maps the fsms, and memory blocks if any are present in the design
+
+techmap; opt
+# This command maps the design to your internal cell library
+
+dfflibmap -liberty /home/lab-user/Desktop/bootcamp-files/Tech-pdks/osu018/osu018_stdcells.lib
+# This command maps the flip-flops present in your design to your standard cell library
+
+abc -liberty /home/lab-user/Desktop/bootcamp-files/Tech-pdks/osu018/osu018_stdcells.lib
+# This command maps the logic of your design to your standard cell library
+
+clean
+# This command removes the unused wires if any from your design
+
+show
+# This command opens a pictorial representation of your design showing how many standard cells are used and how they are connected in your design
+
+write_verilog and_gate_netlist_non_synth.v
+

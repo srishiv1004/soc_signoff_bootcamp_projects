@@ -1,0 +1,27 @@
+# Yosys Script File
+read_verilog counter.v alu.v mux2x1.v mini_soc.v
+# These commands read all the Verilog design files
+
+hierarchy -check -top mini_soc
+# This command checks the hierarchy of the design from the top with the top-level module name as mini_soc
+
+proc; opt; fsm; opt; memory; opt;
+# This command performs the internal processes done by yosys tool as well as maps the FSMs and memory blocks if any are present in the design
+
+techmap; opt;
+# This command maps the design to the internal cell library
+
+dfflibmap -liberty /home/lab-user/Desktop/bootcamp-files/Tech-pdks/osu018/osu018_stdcells.lib
+# This command maps the flip-flops present in the design to the standard cell library
+
+abc -liberty /home/lab-user/Desktop/bootcamp-files/Tech-pdks/osu018/osu018_stdcells.lib
+# This command maps the logic of the design to the standard cell library
+
+clean
+# This command removes unused wires if any from the design
+
+show
+# This command opens a pictorial representation of the synthesized design showing the standard cells used and their connections
+
+write_verilog mini_soc_netlist.v
+
