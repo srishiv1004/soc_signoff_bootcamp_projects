@@ -1,0 +1,9 @@
+read_verilog design.v
+hierarchy -check -top counter_4bit_up
+proc; opt
+techmap; opt
+dfflibmap -liberty osu018_stdcells.lib
+abc - liberty osu018_stdcells.lib
+clean
+stat
+write_verilog -noattr counter_synth.v

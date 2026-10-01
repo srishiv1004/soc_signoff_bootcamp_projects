@@ -1,0 +1,12 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.64+26 (git sha1 a54bca549, clang++ 14.0.0-1ubuntu1.1 -fPIC -O3)
+
+-- Executing script file `script.ys' --
+
+1. Executing Verilog-2005 frontend: design.v
+Parsing Verilog input from `design.v' to AST representation.
